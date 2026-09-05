@@ -47,8 +47,9 @@ Search `index.html` for these and update them with real details:
 - **Phone number** — currently `+92 000 0000000` (in the contact section and the `tel:` link).
 - **Email address** — currently `info@thecitylanguageacademy.com`.
 - **Class hours** — currently `Monday to Saturday, 9:00 to 20:00`.
-- **Testimonials** — the three student quotes are clearly marked sample content (`<!-- SAMPLE testimonials -->`). Swap in real names, photos and quotes, or remove any you cannot verify.
-- **Images** — the photos load from `picsum.photos` as placeholders (treated to match the brand). Replace the `src` URLs with your own academy and classroom photos when you have them.
+- **Testimonials** — the three student quotes are clearly marked sample content (`<!-- SAMPLE testimonials -->`). Swap in real names and quotes, or remove any you cannot verify. Avatars are auto-generated initials, so there are no photos to add.
+- **Hero band goal** — the hero card shows a `7.5` target as an example. Adjust it if you prefer a different headline number.
+- **Visuals are self-contained** — the page uses CSS gradients, patterns and typography rather than external image files, so nothing renders as a blank box. If you later want real photography, you can add `<img>` tags into the hero, programs or "why us" sections.
 
 The Google Map already points at the academy address on Qutba Road, Kamra Kalan.
 
