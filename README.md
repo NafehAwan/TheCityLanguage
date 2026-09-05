@@ -49,7 +49,7 @@ Search `index.html` for these and update them with real details:
 - **Class hours** — currently `Monday to Saturday, 9:00 to 20:00`.
 - **Testimonials** — the three student quotes are clearly marked sample content (`<!-- SAMPLE testimonials -->`). Swap in real names and quotes, or remove any you cannot verify. Avatars are auto-generated initials, so there are no photos to add.
 - **Hero band goal** — the hero card shows a `7.5` target as an example. Adjust it if you prefer a different headline number.
-- **Visuals are self-contained** — the page uses CSS gradients, patterns and typography rather than external image files, so nothing renders as a blank box. If you later want real photography, you can add `<img>` tags into the hero, programs or "why us" sections.
+- **Photos** — the hero, the IELTS card, the "why us" panel and the "Inside the academy" gallery load real photos from `loremflickr.com` (topical stock imagery). These are placeholders so the layout looks complete now. **Replace them with your own photos** of the academy, classes and students before publishing: search `index.html` for `loremflickr.com` and swap each URL for your image path (e.g. `images/classroom.jpg`). Every photo sits over a brand-coloured gradient with a solid colour behind it, so if an image is ever slow or missing you get a coloured panel, never a blank box.
 
 The Google Map already points at the academy address on Qutba Road, Kamra Kalan.
 
