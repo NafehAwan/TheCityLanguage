@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The City Language Academy | IELTS, TOEFL, PTE, Cambridge & Duolingo Prep</title>
+<meta name="description" content="Focused IELTS, TOEFL, PTE Academic, Cambridge English and Duolingo English Test preparation at The City Language Academy, Kamra Kalan, Pakistan. Enroll online." />
+<meta name="theme-color" content="#111820" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The City Language Academy" />
+<meta property="og:description" content="English proficiency exam preparation: IELTS, TOEFL, PTE Academic, Cambridge English and the Duolingo English Test." />
+
+<!-- Favicon: coral monogram -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111820'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23d9573a' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E" />
+
+<!-- Fonts. Self-host for a production build; linked here so the file stays single-drop deployable. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+
+<style>
+/* =========================================================================
+   THE CITY LANGUAGE ACADEMY - landing page
+   Theme: LIGHT (single locked theme, one dark anchor region at the foot)
+   Radius rule: buttons/chips = pill; cards = 16px; inputs = 12px
+   Accent: burnt coral, used identically across every section
+   ========================================================================= */
+
+:root{
+  --paper:#f5f6f8;
+  --card:#ffffff;
+  --ink:#111820;
+  --ink-soft:#414c59;
+  --ink-faint:#6d7784;
+  --line:#e3e6ec;
+  --line-soft:#eef0f4;
+
+  --accent:#d9573a;        /* fills, graphics, duotone */
+  --accent-ink:#af3d1f;    /* accent as TEXT on light (AA safe) */
+  --accent-strong:#98371c; /* primary-button hover */
+
+  --dk-bg:#111820;
+  --dk-card:#18212c;
+  --dk-line:#26303c;
+  --dk-soft:#9aa6b3;
+  --dk-faint:#6b7683;
+
+  --maxw:1200px;
+  --r-card:16px;
+  --r-input:12px;
+
+  --shadow-sm:0 1px 2px rgba(17,24,32,.05), 0 8px 24px -16px rgba(17,24,32,.28);
+  --shadow-md:0 2px 6px rgba(17,24,32,.06), 0 28px 60px -34px rgba(17,24,32,.42);
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,h4{
+  font-family:"Bricolage Grotesque", "Instrument Sans", system-ui, sans-serif;
+  font-weight:700;
+  letter-spacing:-.02em;
+  line-height:1.04;
+  margin:0;
+}
+p{margin:0}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:24px}
+@media (max-width:640px){ .wrap{padding-inline:18px} }
+
+.eyebrow{
+  display:inline-block;
+  font-size:12.5px;
+  font-weight:600;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent-ink);
+  margin-bottom:16px;
+}
+.section-lead{
+  color:var(--ink-soft);
+  font-size:18px;
+  max-width:60ch;
+  margin-top:16px;
+}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:inherit;font-size:16px;font-weight:600;
+  padding:14px 24px;border-radius:999px;border:1px solid transparent;
+  cursor:pointer;white-space:nowrap;
+  transition:transform .18s var(--ease), background .18s var(--ease), color .18s var(--ease), border-color .18s var(--ease), box-shadow .18s var(--ease);
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--accent-strong)}
+.btn-secondary{background:transparent;color:var(--ink);border-color:var(--line);}
+.btn-secondary:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn .ic{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- Header ---------- */
+.top-sentinel{position:absolute;top:0;height:1px;width:1px}
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,246,248,.72);
+  backdrop-filter:saturate(160%) blur(12px);
+  -webkit-backdrop-filter:saturate(160%) blur(12px);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease);
+}
+header.scrolled{border-bottom-color:var(--line);box-shadow:0 10px 30px -28px rgba(17,24,32,.5)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;letter-spacing:-.01em}
+.brand .mark{
+  width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--accent);
+  display:grid;place-items:center;font-family:"Bricolage Grotesque",serif;font-weight:800;font-size:20px;
+}
+.brand b{font-family:"Bricolage Grotesque",serif;font-weight:700;font-size:17px;line-height:1}
+.brand span{display:block;font-size:11.5px;font-weight:500;color:var(--ink-faint);letter-spacing:.02em}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:15.5px;color:var(--ink-soft);font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.nav-toggle svg{width:26px;height:26px;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+
+@media (max-width:900px){
+  .nav-links, .nav-cta .btn{display:none}
+  .nav-toggle{display:block}
+}
+.mobile-menu{display:none;border-top:1px solid var(--line);background:var(--paper)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:15px 24px;font-weight:500;color:var(--ink-soft);border-bottom:1px solid var(--line-soft)}
+.mobile-menu .btn{margin:16px 24px;display:flex;justify-content:center}
+
+/* ---------- Reveal animation ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease), transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:64px;padding-bottom:88px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,5.4vw,68px);font-weight:800;max-width:14ch}
+.hero h1 em{font-style:italic;color:var(--accent-ink);padding-bottom:.06em;display:inline-block;line-height:1.1}
+.hero-sub{margin-top:22px;font-size:19px;color:var(--ink-soft);max-width:46ch}
+.hero-actions{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+
+.hero-visual{position:relative}
+.hero-photo{
+  border-radius:22px;overflow:hidden;box-shadow:var(--shadow-md);
+  aspect-ratio:4/5;position:relative;background:var(--ink);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.hero-photo::after{ /* coral duotone scrim keeps any photo on-brand */
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(200deg, rgba(217,87,58,.30) 0%, rgba(17,24,32,.10) 45%, rgba(17,24,32,.62) 100%);
+  mix-blend-mode:multiply;
+}
+.float-card{
+  position:absolute;left:-22px;bottom:26px;
+  background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:16px 18px;box-shadow:var(--shadow-md);max-width:240px;
+}
+.float-card b{font-family:"Bricolage Grotesque",serif;font-size:15px}
+.float-card p{color:var(--ink-soft);font-size:13.5px;margin-top:4px;line-height:1.45}
+.float-card .row{display:flex;align-items:center;gap:9px}
+.float-card .dotwrap{width:30px;height:30px;border-radius:8px;background:rgba(217,87,58,.12);display:grid;place-items:center;flex:none}
+.float-card svg{width:17px;height:17px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .hero{padding-top:40px;padding-bottom:60px}
+  .hero-visual{order:-1}
+  .hero-photo{aspect-ratio:16/12}
+  .float-card{left:auto;right:16px;bottom:16px}
+}
+
+/* ---------- Tests strip ---------- */
+.tests{padding:20px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
+.tests .wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding-block:22px}
+.tests .label{font-size:13px;letter-spacing:.02em;color:var(--ink-faint);font-weight:500;max-width:200px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 15px;border:1px solid var(--line);border-radius:999px;
+  font-weight:600;font-size:14px;background:var(--paper);
+}
+
+/* ---------- Section shell ---------- */
+section.block{padding:96px 0}
+@media (max-width:640px){ section.block{padding:64px 0} }
+.head-narrow{max-width:56ch}
+.head-narrow h2{font-size:clamp(30px,3.8vw,46px)}
+
+/* ---------- Programs bento ---------- */
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(150px,auto);gap:18px;margin-top:52px}
+.tile{
+  border:1px solid var(--line);border-radius:var(--r-card);background:var(--card);
+  padding:26px;display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+  position:relative;overflow:hidden;
+}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#d6dae2}
+.tile .kick{font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.tile h3{font-size:24px;margin-top:12px}
+.tile p{color:var(--ink-soft);font-size:15px;margin-top:10px;max-width:44ch}
+.tile .tags{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.tile .tags span{font-size:12.5px;color:var(--ink-faint);border:1px solid var(--line);padding:4px 10px;border-radius:999px}
+
+.tile--ielts{grid-column:span 4;grid-row:span 2;color:#fff;border:0;min-height:340px;background:var(--ink)}
+.tile--ielts .photo{position:absolute;inset:0;z-index:0}
+.tile--ielts .photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+.tile--ielts .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(17,24,32,.35), rgba(17,24,32,.9)),linear-gradient(120deg, rgba(217,87,58,.34), transparent 55%);}
+.tile--ielts .inner{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%}
+.tile--ielts h3{font-size:34px}
+.tile--ielts p{color:#d6dbe2;font-size:16px;max-width:40ch}
+.tile--ielts .kick{color:#f2b6a4}
+.tile--ielts .tags span{color:#cfd5dd;border-color:rgba(255,255,255,.22)}
+
+.tile--toefl{grid-column:span 2}
+.tile--pte{grid-column:span 2}
+.tile--cambridge{grid-column:span 3}
+.tile--duo{grid-column:span 3;background:linear-gradient(150deg,#fff, #faeee9);border-color:#f0d9d0}
+
+@media (max-width:860px){
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .tile--ielts{grid-column:1 / -1;grid-row:auto;min-height:300px}
+  .tile--toefl,.tile--pte,.tile--cambridge,.tile--duo{grid-column:span 1}
+}
+@media (max-width:520px){
+  .bento{grid-template-columns:1fr}
+  .tile--toefl,.tile--pte,.tile--cambridge,.tile--duo{grid-column:1 / -1}
+}
+
+/* ---------- Method (process) ---------- */
+.method{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:52px;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden}
+.step{padding:34px 30px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step .n{font-family:"Bricolage Grotesque",serif;font-weight:800;font-size:15px;color:var(--accent);letter-spacing:.04em}
+.step h3{font-size:22px;margin-top:14px}
+.step p{color:var(--ink-soft);font-size:15px;margin-top:10px}
+@media (max-width:800px){
+  .method-grid{grid-template-columns:1fr}
+  .step{border-right:0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+}
+
+/* ---------- Approach split ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.split .media{border-radius:22px;overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:5/4;position:relative;background:var(--ink)}
+.split .media img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04)}
+.split .media::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg, rgba(217,87,58,.22), rgba(17,24,32,.55));mix-blend-mode:multiply}
+.checklist{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px}
+.checklist li{display:flex;gap:13px;align-items:flex-start}
+.checklist .tick{flex:none;width:26px;height:26px;border-radius:8px;background:rgba(217,87,58,.12);display:grid;place-items:center;margin-top:2px}
+.checklist svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.checklist b{font-weight:600}
+.checklist p{color:var(--ink-soft);font-size:15px;margin-top:2px}
+@media (max-width:860px){
+  .split{grid-template-columns:1fr;gap:36px}
+  .split .media{order:-1;aspect-ratio:16/11}
+}
+
+/* ---------- Testimonials ---------- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.quote{border:1px solid var(--line);border-radius:var(--r-card);background:var(--card);padding:28px;display:flex;flex-direction:column}
+.quote .mark{font-family:"Bricolage Grotesque",serif;font-size:44px;line-height:.4;color:var(--accent);height:24px}
+.quote p{font-size:16.5px;margin-top:6px;color:var(--ink)}
+.quote .who{margin-top:auto;padding-top:22px;display:flex;align-items:center;gap:12px}
+.quote .av{width:42px;height:42px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+.quote .who b{display:block;font-size:15px}
+.quote .who span{font-size:13px;color:var(--ink-faint)}
+@media (max-width:860px){ .quotes{grid-template-columns:1fr} }
+
+/* ---------- Enroll form ---------- */
+.enroll{background:linear-gradient(180deg,var(--paper),#eef0f4)}
+.enroll-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.enroll-copy h2{font-size:clamp(30px,3.6vw,44px)}
+.enroll-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px;color:var(--ink-soft)}
+.enroll-list li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px}
+.enroll-list svg{width:19px;height:19px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;margin-top:2px}
+
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:var(--shadow-md)}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:560px){ .grid-2{grid-template-columns:1fr} .enroll-grid{grid-template-columns:1fr;gap:40px} .form-card{padding:24px} }
+label{font-size:14px;font-weight:600;color:var(--ink)}
+label .opt{font-weight:400;color:var(--ink-faint)}
+input,select,textarea{
+  font-family:inherit;font-size:15.5px;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r-input);
+  padding:12px 14px;width:100%;transition:border-color .15s, box-shadow .15s, background .15s;
+}
+input::placeholder,textarea::placeholder{color:#9aa3ad}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--accent);background:var(--card);
+  box-shadow:0 0 0 3px rgba(217,87,58,.18);
+}
+textarea{resize:vertical;min-height:96px}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236d7784' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.err{color:var(--accent-ink);font-size:12.5px;min-height:0;display:none}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--accent-ink);box-shadow:0 0 0 3px rgba(175,61,31,.14)}
+.field.invalid .err{display:block}
+.form-actions{margin-top:8px}
+.form-actions .btn{width:100%;justify-content:center;font-size:16.5px;padding:16px}
+.form-note{font-size:12.5px;color:var(--ink-faint);text-align:center;margin-top:14px;line-height:1.5}
+.form-status{border-radius:12px;padding:14px 16px;font-size:14.5px;margin-bottom:18px;display:none;align-items:flex-start;gap:10px}
+.form-status.show{display:flex}
+.form-status.ok{background:rgba(31,138,91,.1);color:#166a45;border:1px solid rgba(31,138,91,.28)}
+.form-status.bad{background:rgba(175,61,31,.09);color:var(--accent-ink);border:1px solid rgba(175,61,31,.28)}
+.form-status svg{width:19px;height:19px;flex:none;margin-top:1px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.spinner{width:18px;height:18px;border:2.5px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:none}
+.btn.loading .spinner{display:inline-block}
+.btn.loading .btn-label{opacity:.75}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){ .spinner{animation-duration:1.4s} }
+
+/* ---------- Contact + footer (dark anchor) ---------- */
+.foot{background:var(--dk-bg);color:#eef1f5}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:88px 0 72px;align-items:start}
+.contact h2{color:#fff;font-size:clamp(28px,3.4vw,42px)}
+.contact .lead{color:var(--dk-soft);margin-top:16px;max-width:44ch}
+.info{display:grid;gap:20px;margin-top:34px}
+.info-item{display:flex;gap:14px;align-items:flex-start}
+.info-item .ic{flex:none;width:40px;height:40px;border-radius:11px;background:var(--dk-card);border:1px solid var(--dk-line);display:grid;place-items:center}
+.info-item svg{width:19px;height:19px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.info-item .k{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--dk-faint)}
+.info-item .v{font-size:16px;color:#e7ebf0;margin-top:3px;line-height:1.5}
+.info-item a.v:hover{color:var(--accent)}
+.map{border-radius:18px;overflow:hidden;border:1px solid var(--dk-line);box-shadow:var(--shadow-md);min-height:340px;background:var(--dk-card)}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block;filter:grayscale(.35)}
+@media (max-width:860px){ .contact{grid-template-columns:1fr;gap:40px;padding:60px 0 50px} }
+
+.footbar{border-top:1px solid var(--dk-line);padding:34px 0}
+.footbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.footbar .brand b{color:#fff}
+.footbar .brand span{color:var(--dk-faint)}
+.footbar .brand .mark{background:var(--dk-card);border:1px solid var(--dk-line)}
+.footnav{display:flex;gap:26px;flex-wrap:wrap}
+.footnav a{color:var(--dk-soft);font-size:14.5px}
+.footnav a:hover{color:#fff}
+.copyright{color:var(--dk-faint);font-size:13.5px;width:100%;border-top:1px solid var(--dk-line);padding-top:22px;margin-top:6px}
+</style>
+</head>
+<body>
+
+<div class="top-sentinel" id="topSentinel" aria-hidden="true"></div>
+
+<!-- ============================= HEADER ============================= -->
+<header id="siteHeader">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="The City Language Academy home">
+      <span class="mark">C</span>
+      <span>
+        <b>The City Language Academy</b>
+        <span>Kamra Kalan, Pakistan</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#programs">Programs</a>
+      <a href="#method">How it works</a>
+      <a href="#results">Students</a>
+      <a href="#contact">Location</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#enroll" class="btn btn-primary">Enroll now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#programs">Programs</a>
+    <a href="#method">How it works</a>
+    <a href="#results">Students</a>
+    <a href="#contact">Location</a>
+    <a href="#enroll" class="btn btn-primary">Enroll now</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">IELTS and English test preparation</span>
+        <h1>Get the band score your <em>future</em> depends on.</h1>
+        <p class="hero-sub">Focused coaching for IELTS, TOEFL, PTE Academic, Cambridge English and the Duolingo English Test, taught by instructors who know exactly what each exam rewards.</p>
+        <div class="hero-actions">
+          <a href="#enroll" class="btn btn-primary">Enroll now
+            <svg class="ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#programs" class="btn btn-secondary">View programs</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-photo">
+          <img src="https://picsum.photos/seed/tcla-students-study/900/1125" alt="Students preparing for an English proficiency exam" loading="eager" width="900" height="1125" />
+        </div>
+        <div class="float-card">
+          <div class="row">
+            <div class="dotwrap">
+              <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <b>Built around the real exams</b>
+          </div>
+          <p>Mock tests, band feedback and speaking practice for every test we teach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TESTS STRIP ====================== -->
+  <section class="tests" aria-label="Tests we prepare students for">
+    <div class="wrap">
+      <p class="label">Preparation for every major English proficiency test</p>
+      <div class="chips">
+        <span class="chip">IELTS</span>
+        <span class="chip">TOEFL iBT</span>
+        <span class="chip">PTE Academic</span>
+        <span class="chip">Cambridge English</span>
+        <span class="chip">Duolingo English Test</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PROGRAMS ============================= -->
+  <section class="block" id="programs">
+    <div class="wrap">
+      <div class="head-narrow reveal">
+        <span class="eyebrow">Programs</span>
+        <h2>Choose the certificate the world asks for.</h2>
+        <p class="section-lead">Universities, employers and immigration authorities each accept different English tests. We prepare you for the one your destination actually needs, and help you pick if you are not sure yet.</p>
+      </div>
+
+      <div class="bento">
+        <!-- 5 tests -> 5 cells -->
+        <article class="tile tile--ielts reveal">
+          <div class="photo"><img src="https://picsum.photos/seed/tcla-ielts-writing/900/700" alt="IELTS writing and speaking preparation" loading="lazy" /></div>
+          <div class="inner">
+            <span class="kick">Most requested</span>
+            <h3>IELTS</h3>
+            <p>Academic and General Training. Listening, reading, writing and one-to-one speaking practice, scored against the official band descriptors so you know where you stand before test day.</p>
+            <div class="tags"><span>Academic</span><span>General Training</span><span>Band feedback</span></div>
+          </div>
+        </article>
+
+        <article class="tile tile--toefl reveal">
+          <div>
+            <h3>TOEFL iBT</h3>
+            <p>Internet-based test drills for the integrated tasks that trip most students up.</p>
+          </div>
+          <div class="tags"><span>North America focus</span></div>
+        </article>
+
+        <article class="tile tile--pte reveal">
+          <div>
+            <h3>PTE Academic</h3>
+            <p>Computer-scored practice with strategies tuned to how the automatic marking works.</p>
+          </div>
+          <div class="tags"><span>Fast results</span></div>
+        </article>
+
+        <article class="tile tile--cambridge reveal">
+          <div>
+            <span class="kick">Qualifications</span>
+            <h3>Cambridge English</h3>
+            <p>Preparation for B2 First, C1 Advanced and C2 Proficiency, the certificates that never expire.</p>
+          </div>
+          <div class="tags"><span>B2 First</span><span>C1 Advanced</span><span>C2 Proficiency</span></div>
+        </article>
+
+        <article class="tile tile--duo reveal">
+          <div>
+            <span class="kick">Online test</span>
+            <h3>Duolingo English Test</h3>
+            <p>Adaptive online exam coaching for applicants who need a quick, affordable score from home.</p>
+          </div>
+          <div class="tags"><span>At-home</span><span>Accepted widely</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= METHOD ============================= -->
+  <section class="block method" id="method">
+    <div class="wrap">
+      <div class="head-narrow reveal">
+        <h2>A simple path from first class to test day.</h2>
+      </div>
+      <div class="method-grid reveal">
+        <div class="step">
+          <div class="n">Placement assessment</div>
+          <h3>Find your real level</h3>
+          <p>You start with a diagnostic across all four skills. We set an honest target band and a plan to reach it, instead of guessing.</p>
+        </div>
+        <div class="step">
+          <div class="n">Targeted training</div>
+          <h3>Fix what costs you marks</h3>
+          <p>Small batches mean the teaching goes straight to your weak areas. You get writing corrected in detail and regular speaking practice.</p>
+        </div>
+        <div class="step">
+          <div class="n">Test-day execution</div>
+          <h3>Walk in ready</h3>
+          <p>Full timed mock tests under exam conditions, so the real day feels familiar and your score reflects what you can actually do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= APPROACH SPLIT ============================= -->
+  <section class="block">
+    <div class="wrap split">
+      <div class="reveal">
+        <h2 style="font-size:clamp(28px,3.6vw,42px)">Teaching that respects your time and your goal.</h2>
+        <ul class="checklist">
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <div><b>Instructors who sit the exams they teach</b><p>Guidance based on the current test format, not outdated material.</p></div>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <div><b>Written feedback on every essay</b><p>You see exactly which band criteria are holding you back and how to move up.</p></div>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <div><b>Flexible morning and evening batches</b><p>Schedules that fit around university, work and family in Kamra Kalan and nearby areas.</p></div>
+          </li>
+          <li>
+            <span class="tick"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+            <div><b>Support with the whole application</b><p>Help understanding score requirements for your university, visa or employer.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="media reveal">
+        <img src="https://picsum.photos/seed/tcla-classroom-coaching/1000/800" alt="One to one English coaching session at the academy" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= TESTIMONIALS ============================= -->
+  <!-- SAMPLE testimonials. Replace names, photos and quotes with your real students before publishing. -->
+  <section class="block method" id="results">
+    <div class="wrap">
+      <div class="head-narrow reveal">
+        <h2>Scores that moved lives forward.</h2>
+      </div>
+      <div class="quotes">
+        <figure class="quote reveal">
+          <div class="mark">&ldquo;</div>
+          <p>The writing feedback was the difference for me. I finally understood what band 7 actually looks like, and I hit it.</p>
+          <figcaption class="who">
+            <img class="av" src="https://picsum.photos/seed/tcla-ayesha/120/120" alt="" />
+            <div><b>Ayesha Nadeem</b><span>IELTS Academic</span></div>
+          </figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <div class="mark">&ldquo;</div>
+          <p>Small classes meant I could not hide from speaking practice. That is exactly why my confidence grew so fast.</p>
+          <figcaption class="who">
+            <img class="av" src="https://picsum.photos/seed/tcla-bilal/120/120" alt="" />
+            <div><b>Bilal Raza Khan</b><span>PTE Academic</span></div>
+          </figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <div class="mark">&ldquo;</div>
+          <p>They helped me pick the Duolingo test for my timeline, then prepared me for it properly. My application was in on time.</p>
+          <figcaption class="who">
+            <img class="av" src="https://picsum.photos/seed/tcla-hina/120/120" alt="" />
+            <div><b>Hina Siddiqui</b><span>Duolingo English Test</span></div>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= ENROLL ============================= -->
+  <section class="block enroll" id="enroll">
+    <div class="wrap enroll-grid">
+      <div class="enroll-copy reveal">
+        <span class="eyebrow">Enroll</span>
+        <h2>Start with a free placement chat.</h2>
+        <p class="section-lead">Tell us which test you are aiming for and when you want to start. We will get back to you with batch timings, fees and the next available seat.</p>
+        <ul class="enroll-list">
+          <li><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> No obligation. A real person reads every request.</li>
+          <li><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Ask anything about the exams, fees or timings.</li>
+          <li><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Morning and evening batches available.</li>
+        </ul>
+      </div>
+
+      <div class="form-card reveal">
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        <form id="enrollForm" novalidate>
+          <div class="grid-2">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="from_name" type="text" autocomplete="name" placeholder="e.g. Sana Malik" required />
+              <span class="err">Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="opt">(WhatsApp welcome)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="03xx xxxxxxx" required />
+              <span class="err">Please enter a phone number.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="reply_to" type="email" autocomplete="email" placeholder="you@example.com" required />
+            <span class="err">Please enter a valid email address.</span>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="program">Which test?</label>
+              <select id="program" name="program" required>
+                <option value="" disabled selected>Select a test</option>
+                <option>IELTS</option>
+                <option>TOEFL iBT</option>
+                <option>PTE Academic</option>
+                <option>Cambridge English</option>
+                <option>Duolingo English Test</option>
+                <option>Not sure yet</option>
+              </select>
+              <span class="err">Please choose a test.</span>
+            </div>
+            <div class="field">
+              <label for="schedule">Preferred batch</label>
+              <select id="schedule" name="schedule">
+                <option value="" disabled selected>Select a time</option>
+                <option>Morning</option>
+                <option>Afternoon</option>
+                <option>Evening</option>
+                <option>Weekend</option>
+                <option>Flexible</option>
+              </select>
+              <span class="err">Please pick a batch.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Anything we should know? <span class="opt">(optional)</span></label>
+            <textarea id="message" name="message" placeholder="Your target band, test date, or any questions."></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submitBtn">
+              <span class="spinner" aria-hidden="true"></span>
+              <span class="btn-label">Send enrollment request</span>
+            </button>
+          </div>
+          <p class="form-note">By sending this, you agree to be contacted about your enrollment. We do not share your details.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= CONTACT + FOOTER ============================= -->
+<footer class="foot" id="contact">
+  <div class="wrap contact">
+    <div class="reveal">
+      <h2>Come and see the academy.</h2>
+      <p class="lead">Walk-ins are welcome during class hours. You will find us in Katba Village, Kamra Kalan, near Borjan Shoes on Qutba Road.</p>
+      <div class="info">
+        <div class="info-item">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div>
+            <div class="k">Address</div>
+            <div class="v">Apartment No 4, The City Language Academy, Qutba Road, near Borjan Shoes, Katba Village, Kamra Kalan, 43400, Pakistan</div>
+          </div>
+        </div>
+        <!-- Replace the phone, email and hours below with your real details. -->
+        <div class="info-item">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div>
+            <div class="k">Phone</div>
+            <a class="v" href="tel:+920000000000">+92 000 0000000</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <div>
+            <div class="k">Email</div>
+            <a class="v" href="mailto:info@thecitylanguageacademy.com">info@thecitylanguageacademy.com</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <div>
+            <div class="k">Class hours</div>
+            <div class="v">Monday to Saturday, 9:00 to 20:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="map reveal">
+      <iframe
+        title="The City Language Academy location on the map"
+        src="https://www.google.com/maps?q=The%20City%20Language%20Academy%2C%20Qutba%20Road%2C%20Kamra%20Kalan%2C%2043400%2C%20Pakistan&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  <div class="footbar">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <span class="mark">C</span>
+        <span><b>The City Language Academy</b><span>English proficiency preparation</span></span>
+      </a>
+      <nav class="footnav" aria-label="Footer">
+        <a href="#programs">Programs</a>
+        <a href="#method">How it works</a>
+        <a href="#results">Students</a>
+        <a href="#enroll">Enroll</a>
+      </nav>
+      <p class="copyright">&copy; <span id="year"></span> The City Language Academy, Kamra Kalan. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- EmailJS SDK (allowed CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* =========================================================================
+   1) EMAILJS CONFIG  --  fill these three values in (see README.md)
+   Sign in at https://www.emailjs.com , then:
+     - PUBLIC KEY : Account > General > Public Key
+     - SERVICE ID : Email Services > (your service)
+     - TEMPLATE ID: Email Templates > (your template)
+   In your EmailJS template, set the "To email" to nafehawan94@gmail.com
+   and use these variables: {{from_name}} {{reply_to}} {{phone}}
+   {{program}} {{schedule}} {{message}}
+   ========================================================================= */
+  const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";
+  const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";
+  const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+  const NOTIFY_EMAIL        = "nafehawan94@gmail.com"; // where requests are sent
+
+(function () {
+  "use strict";
+
+  // ---- Footer year ----
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ---- Header shadow via IntersectionObserver (no scroll listener) ----
+  var header = document.getElementById("siteHeader");
+  var sentinel = document.getElementById("topSentinel");
+  if (sentinel && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      header.classList.toggle("scrolled", !entries[0].isIntersecting);
+    }, { rootMargin: "-1px 0px 0px 0px" }).observe(sentinel);
+  }
+
+  // ---- Reveal on scroll ----
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reveals = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var ro = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); ro.unobserve(e.target); }
+      });
+    }, { threshold: 0.14, rootMargin: "0px 0px -8% 0px" });
+    reveals.forEach(function (el) { ro.observe(el); });
+  }
+
+  // ---- Mobile menu ----
+  var toggle = document.getElementById("navToggle");
+  var menu = document.getElementById("mobileMenu");
+  toggle.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  menu.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      menu.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // ---- Form validation + EmailJS submit ----
+  var form = document.getElementById("enrollForm");
+  var btn = document.getElementById("submitBtn");
+  var statusBox = document.getElementById("formStatus");
+
+  var ICON_OK  = '<svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+  var ICON_BAD = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
+
+  function setStatus(kind, msg) {
+    statusBox.className = "form-status show " + (kind === "ok" ? "ok" : "bad");
+    statusBox.innerHTML = (kind === "ok" ? ICON_OK : ICON_BAD) + "<span>" + msg + "</span>";
+  }
+  function clearStatus() { statusBox.className = "form-status"; statusBox.innerHTML = ""; }
+
+  function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+  function fieldWrap(input) { return input.closest(".field"); }
+  function markInvalid(input) { fieldWrap(input).classList.add("invalid"); }
+  function clearInvalid(input) { fieldWrap(input).classList.remove("invalid"); }
+
+  // live-clear as the user fixes a field
+  form.querySelectorAll("input, select, textarea").forEach(function (el) {
+    el.addEventListener("input", function () { clearInvalid(el); });
+    el.addEventListener("change", function () { clearInvalid(el); });
+  });
+
+  function validate() {
+    var ok = true;
+    var name = form.from_name, email = form.reply_to, phone = form.phone,
+        program = form.program, schedule = form.schedule;
+
+    if (!name.value.trim()) { markInvalid(name); ok = false; }
+    if (!phone.value.trim()) { markInvalid(phone); ok = false; }
+    if (!isEmail(email.value.trim())) { markInvalid(email); ok = false; }
+    if (!program.value) { markInvalid(program); ok = false; }
+    if (!schedule.value) { markInvalid(schedule); ok = false; }
+
+    if (!ok) {
+      var firstBad = form.querySelector(".field.invalid input, .field.invalid select, .field.invalid textarea");
+      if (firstBad) firstBad.focus();
+    }
+    return ok;
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    clearStatus();
+    if (!validate()) {
+      setStatus("bad", "Please complete the highlighted fields.");
+      return;
+    }
+
+    // Guard: credentials not configured yet
+    if (EMAILJS_PUBLIC_KEY.indexOf("YOUR_") === 0 ||
+        EMAILJS_SERVICE_ID.indexOf("YOUR_") === 0 ||
+        EMAILJS_TEMPLATE_ID.indexOf("YOUR_") === 0 ||
+        typeof emailjs === "undefined") {
+      setStatus("bad", "The form is not connected yet. Please add your EmailJS keys (see README), or contact us by phone.");
+      return;
+    }
+
+    btn.classList.add("loading");
+    btn.disabled = true;
+
+    var params = {
+      from_name: form.from_name.value.trim(),
+      reply_to:  form.reply_to.value.trim(),
+      phone:     form.phone.value.trim(),
+      program:   form.program.value,
+      schedule:  form.schedule.value || "Not specified",
+      message:   form.message.value.trim() || "No message",
+      to_email:  NOTIFY_EMAIL
+    };
+
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
+      .then(function () {
+        btn.classList.remove("loading");
+        btn.disabled = false;
+        form.reset();
+        setStatus("ok", "Thank you. Your request has been sent, we will reply shortly.");
+        statusBox.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+      })
+      .catch(function (err) {
+        btn.classList.remove("loading");
+        btn.disabled = false;
+        setStatus("bad", "Something went wrong sending your request. Please try again, or reach us by phone.");
+        if (window.console) console.error("EmailJS error:", err);
+      });
+  });
+})();
+</script>
+</body>
+</html>
