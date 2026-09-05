@@ -76,7 +76,8 @@ python3 -m http.server 8000    # then visit http://localhost:8000
 
 ## Design notes
 
-- **One locked light theme**, a single burnt-coral accent used consistently, Bricolage Grotesque + Instrument Sans type.
-- **Motion** is scroll-reveal plus hover feedback only, and it respects `prefers-reduced-motion`.
-- **Accessibility**: labels sit above every input, focus rings are visible, and buttons meet contrast targets.
+- **Identity: editorial + trust.** Ink-navy brand surface (`#0f1e33`) with a single gold accent (`#e0a53f`) used sparingly for achievement, CTAs and rules. Navy anchors the hero, the enrollment block and the footer; the body sits on a cool off-white.
+- **Type:** DM Serif Display for headlines (a literacy/certification signal), Hanken Grotesque for body and UI.
+- **Motion** is one orchestrated hero entrance plus hover and form feedback, and it respects `prefers-reduced-motion` (no fade-up on every section).
+- **Accessibility**: labels sit above every input, focus rings are visible, and text and buttons meet WCAG AA contrast in both the navy and light areas.
 - Fonts are linked from Google Fonts for single-file convenience. For maximum performance you can self-host them later.
